@@ -1,3 +1,5 @@
+//backend
+//functions
 function takeVowels(str) {
   var vowels = ['a', 'e', 'i', 'o', 'u']
   var temp = ''
@@ -12,4 +14,13 @@ function takeVowels(str) {
   return temp
 }
 
-console.log(takeVowels("hello? did it work"))
+//frontend
+//jqery
+$(document).ready(function () {
+  $("form#wordplay").submit(function (event) {
+    event.preventDefault();
+    var input = $("#input").val();
+    var parsedInput = takeVowels(input);
+    $("#wordresults").text(parsedInput);
+  });
+});
